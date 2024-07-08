@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SpringbootAopApplication<springboot-aop>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.jmunoz.springboot.aop.springbootaop.SpringbootAopApplication",
+      "projectName": "springboot-aop",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

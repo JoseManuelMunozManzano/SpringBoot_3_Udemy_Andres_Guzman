@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "8ac0339d-380e-4fd7-a746-358464bb69a3",
+		"name": "Andres_Jose_Oauth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7508044"
+	},
+	"item": [
+		{
+			"name": "OBTENER_TOKEN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "client-app",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "3CvuDSvazhqhNCpjXRmsyQpK9wXC0wkpI71cjpSzS6Emm8jsbt6yot6ygITY2CwJvQy3-Bq4eBaiRXf54Vi1DD-dcIoyjsjhLRwr5K13j-7bbUVaT3LK99Nym_9T39Z3",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8080/authorized",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9000/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI3ZmY5MzdiZC04NTNhLTRlNDItYWU4My0xMWI4YWQ2ODdmYmIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwZXBlIiwiYXVkIjoiY2xpZW50LWFwcCIsIm5iZiI6MTcxMzA3NzQ0Mywic2NvcGUiOlsicmVhZCIsIm9wZW5pZCIsInByb2ZpbGUiLCJ3cml0ZSJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjkwMDAiLCJleHAiOjE3MTMwNzc3NDMsImlhdCI6MTcxMzA3NzQ0MywianRpIjoiZjQzNjA4ZmYtOTE1MS00NDZhLWE1YzYtMGIyODNkMDFjM2E1In0.UEWR6F2WP_oBO0Vv8lxIy86kpHIoZrhlR-tgMRM7zHBj4Y-Y89gn2W4DV07mTY-9NrPlZXt3fCxJQHwWD9PK4CTS3VB4ZRGUhwfaRDOq9APTIIbyGqwIXEOUuHlfJAyXTHDWwSOcyRdnMePDAEjsNKMbqT_8h-T86U_8xu275LpuQlN1xelyZ9o9vm2QMxMsfmW-5dsGL8UpBbCXEcIIkR3kb-19t0A3JSfyUMRrZFQ2FtuWtxEN2omDgSILPncZDKurXLn6QziOuUdpGZ4VI3iBSYSY5218raxdIFtKpRwwB7RG-t0eWqE3IfcMApbH8pFELpHKI0vFL5mEjWYBiQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI3ZmY5MzdiZC04NTNhLTRlNDItYWU4My0xMWI4YWQ2ODdmYmIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwZXBlIiwiYXVkIjoiY2xpZW50LWFwcCIsIm5iZiI6MTcxMzA3NzQ0Mywic2NvcGUiOlsicmVhZCIsIm9wZW5pZCIsInByb2ZpbGUiLCJ3cml0ZSJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjkwMDAiLCJleHAiOjE3MTMwNzc3NDMsImlhdCI6MTcxMzA3NzQ0MywianRpIjoiZjQzNjA4ZmYtOTE1MS00NDZhLWE1YzYtMGIyODNkMDFjM2E1In0.UEWR6F2WP_oBO0Vv8lxIy86kpHIoZrhlR-tgMRM7zHBj4Y-Y89gn2W4DV07mTY-9NrPlZXt3fCxJQHwWD9PK4CTS3VB4ZRGUhwfaRDOq9APTIIbyGqwIXEOUuHlfJAyXTHDWwSOcyRdnMePDAEjsNKMbqT_8h-T86U_8xu275LpuQlN1xelyZ9o9vm2QMxMsfmW-5dsGL8UpBbCXEcIIkR3kb-19t0A3JSfyUMRrZFQ2FtuWtxEN2omDgSILPncZDKurXLn6QziOuUdpGZ4VI3iBSYSY5218raxdIFtKpRwwB7RG-t0eWqE3IfcMApbH8pFELpHKI0vFL5mEjWYBiQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"hola que tal!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

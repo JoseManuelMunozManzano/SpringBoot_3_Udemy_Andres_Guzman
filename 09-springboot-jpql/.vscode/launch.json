@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-JpqlApplication<jpql>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.jmunoz.springboot.jpql.JpqlApplication",
+      "projectName": "jpql",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

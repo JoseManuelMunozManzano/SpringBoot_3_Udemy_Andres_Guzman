@@ -1,0 +1,27 @@
+# Configuración de nuestro servidor de recursos y nuestro OAuth2 Client.
+spring:
+  security:
+    oauth2:
+      # Indicamos servidor de autorizaciones, que es donde vamos a validar el token.
+      resourceserver:
+        jwt:
+          issuer-uri: "http://127.0.0.1:9000"
+      client:
+        registration:
+          # Este client-app y los otros valores vienen del proyecto auth-server. Ver registeredClientRepository()
+          client-app:
+            provider: spring
+            client-id: client-app
+            client-secret: 12345
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/authorized"
+            scope:
+              - openid
+              - profile
+              - read
+              - write
+            client-name: client-app
+        # Indicamos servidor de autorizaciones, que es donde vamos a hacer el login.
+        provider:
+          spring:
+            issuer-uri: "http://127.0.0.1:9000"
